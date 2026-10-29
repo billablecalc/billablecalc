@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Billable Hours Timer for Freelancers (Chrome Extension) | BillableCalc</title><meta name="description" content="Free Chrome extension to track billable hours per client, see what you earn and turn your hours into an invoice in one click. No account, data stays in your browser."><link rel="canonical" href="https://billablecalc.com/billable-hours-timer.html"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--ac:#0b6e4f;--bd:#ddd;--card:#f6f8f7}
+@media(prefers-color-scheme:dark){:root{--bg:#141716;--fg:#eee;--mut:#9aa;--ac:#3ecf9a;--bd:#333;--card:#1d2321}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+header,main,footer{max-width:760px;margin:auto;padding:16px}header{display:flex;justify-content:space-between;border-bottom:1px solid var(--bd)}
+a{color:var(--ac)}h1{line-height:1.2}.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:16px 0}
+label{display:block;margin:10px 0 4px;font-weight:600}input,textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+button,.btn{background:var(--ac);color:#fff;border:0;padding:10px 18px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none;display:inline-block;margin-top:12px}
+.out{font-size:1.3em;font-weight:700;margin-top:12px}.ad{min-height:90px;margin:16px 0}footer{color:var(--mut);font-size:.9em}
+header{align-items:center}header nav a{margin-left:16px;text-decoration:none;font-weight:600}header nav a:hover{text-decoration:underline}
+main.wide,body.w header,body.w footer{max-width:980px}.hero{padding:40px 0 24px;text-align:center}.hero h1{font-size:2.3em;margin:0 0 12px}.hero p{font-size:1.15em;color:var(--mut);max-width:620px;margin:0 auto 20px}
+.hero .btn{margin:6px}.btn.alt{background:transparent;color:var(--ac);border:2px solid var(--ac)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;color:var(--mut);font-size:.95em;margin:18px 0 0;padding:0;list-style:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:14px 0}.grid .card{margin:0}
+.grid .card h3{margin:0 0 6px;font-size:1.05em}.grid .card h3 a{text-decoration:none}.grid .card p{margin:0;color:var(--mut);font-size:.95em}
+.grid .card:hover{border-color:var(--ac)}.sec{margin:44px 0 8px}.sec h2{margin:0 0 4px}.sec>p{margin:0;color:var(--mut)}
+.promo{background:var(--card);border:2px solid var(--ac);border-radius:14px;padding:26px;margin:44px 0;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+.promo>div{flex:1 1 320px}.promo h2{margin:0 0 8px}.promo ul{padding-left:20px;margin:10px 0}.price{font-size:2em;font-weight:800}
+.links{columns:2;column-gap:28px;padding-left:18px}.links li{margin:6px 0;break-inside:avoid}
+details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--mut)}
+@media(max-width:600px){.links{columns:1}.hero h1{font-size:1.8em}}
+@media(max-width:600px){header nav a{margin-left:10px;font-size:.95em}}
+@media print{header,footer,.noprint,.ad{display:none}}</style><style>.ac-hero{display:flex;justify-content:center;margin-bottom:6px}.ac-hero img{width:64px;height:64px}.shot{width:100%;height:auto;border-radius:12px;border:1px solid var(--bd);display:block;margin:10px 0 4px}.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0}.feat .card{margin:0}.feat h3{margin:0 0 6px;font-size:1.05em}.feat p{margin:0;color:var(--mut);font-size:.95em}.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.plans .card{margin:0}.plans .on{border:2px solid var(--ac)}.note{color:var(--mut);font-size:.9em}.welcome{border:2px solid var(--ac)}.welcome h2{margin:0 0 8px}.welcome ol{margin:8px 0 0}kbd{font:.85em ui-monospace,monospace;padding:1px 6px;border:1px solid var(--bd);border-radius:5px;background:var(--bg)}</style></head><body class="w"><header><a href="/"><b>BillableCalc</b></a><nav><a href="/#tools">Tools</a><a href="/#guides">Guides</a><a href="/templates.html">Templates</a><a href="/#apps">Apps</a></nav></header>
+<main class="wide">
+<div class="card welcome" id="welcome" hidden><h2>You&rsquo;re all set &#127881;</h2><p>BillableCalc Timer is installed. Three quick tips:</p>
+<ol><li><b>Pin it</b> so the timer is always one click away: click the puzzle icon next to the address bar, then the pin next to BillableCalc Timer.</li>
+<li>Add your first client and hourly rate, then press <b>Start</b>.</li>
+<li>Start or stop without opening anything: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>.</li></ol></div>
+<section class="hero">
+<div class="ac-hero"><img src="/img/timer-icon.png" alt="" width="64" height="64"></div>
+<h1>A billable hours timer that turns into an invoice</h1>
+<p>BillableCalc Timer is a free Chrome extension for freelancers. Start a timer per client, watch what you earn at their rate, and send your hours to an invoice in one click.</p>
+<a class="btn" href="https://chromewebstore.google.com/detail/kcolochdcbfpdidechedpkdlobjmdned?utm_source=billablecalc&utm_medium=landing&utm_campaign=site" rel="nofollow">Add to Chrome &mdash; it&rsquo;s free</a><a class="btn alt" href="#pricing">See Pro</a>
+<ul class="trust"><li>No account, no sign-up</li><li>Your data stays in your browser</li><li>Works offline</li></ul>
+</section>
+
+<img class="shot" src="/img/timer-running.jpg" alt="BillableCalc Timer running: 1 hour 12 minutes, 72.64 euros earned at 60 euros per hour" width="1280" height="800" loading="lazy">
+
+<div class="feat">
+<div class="card"><h3>One-click timer</h3><p>Pick a client, type what you&rsquo;re working on, press Start. The timer keeps running when the window closes.</p></div>
+<div class="card"><h3>See what you earn</h3><p>Each client has an hourly rate and currency. The amount grows while you work.</p></div>
+<div class="card"><h3>Badge and shortcut</h3><p>Elapsed time on the toolbar icon. <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> starts or stops it from any tab.</p></div>
+<div class="card"><h3>Entries you can fix</h3><p>Forgot to start the timer? Add time by hand or edit start and end of any entry.</p></div>
+<div class="card"><h3>Invoice in one click</h3><p>Choose a client and a period. Our <a href="/invoice-generator.html">free invoice generator</a> opens with your hours filled in.</p></div>
+<div class="card"><h3>Private by design</h3><p>No servers, no tracking. Hours and clients are stored in your browser only.</p></div>
+</div>
+
+<div class="sec"><h2>How it works</h2></div>
+<ol>
+<li>Install BillableCalc Timer from the Chrome Web Store and pin it to the toolbar.</li>
+<li>Add a client with an hourly rate, then press <b>Start</b> when you begin working.</li>
+<li>At the end of the week open <b>Entries</b>, pick the client and press <b>Create invoice</b>. Save the invoice as PDF and send it.</li>
+</ol>
+<img class="shot" src="/img/timer-entries.jpg" alt="Entries for this week: 13 hours 15 minutes, 886.25 euros, grouped by day" width="1280" height="800" loading="lazy">
+
+<div class="sec" id="pricing"><h2>Free and Pro</h2><p>The timer and invoices are free. Pro is for freelancers with many clients.</p></div>
+<div class="plans">
+<div class="card"><h3>Free</h3><div class="price">$0</div><ul><li>Timer, badge and shortcut</li><li>Up to 2 clients</li><li>Last 14 days of entries</li><li>Invoices in one click</li></ul><a class="btn alt" href="https://chromewebstore.google.com/detail/kcolochdcbfpdidechedpkdlobjmdned?utm_source=billablecalc&utm_medium=landing&utm_campaign=site" rel="nofollow">Add to Chrome</a></div>
+<div class="card on"><h3>Pro</h3><div class="price">$4<span class="note">/month</span></div><p class="note">or $29/year &mdash; cancel any time</p><ul><li>Unlimited clients</li><li>Full history</li><li>CSV export for your accountant</li><li>Round billed time up to 6, 15 or 30 minutes</li></ul><a class="btn" href="https://billablecalc.gumroad.com/l/timer-pro?utm_source=billablecalc&utm_medium=landing&utm_campaign=site">Get Pro</a></div>
+</div>
+<p class="note">After buying Pro, paste the license key from your Gumroad receipt into the extension (Pro &rarr; Activate).</p>
+
+<img class="shot" src="/img/timer-invoice.jpg" alt="Invoice created from tracked hours: three lines, total 430.20 euros" width="1280" height="800" loading="lazy">
+
+<div class="sec"><h2>Questions</h2></div>
+<details><summary>Do I need an account?</summary><p>No. Install the extension and start tracking. There is nothing to sign up for.</p></details>
+<details><summary>Where are my hours stored?</summary><p>In your browser&rsquo;s local extension storage on your computer. We have no servers that receive them. Removing the extension deletes them, so export a CSV (Pro) or create invoices before you uninstall. See the <a href="/privacy-timer.html">privacy policy</a>.</p></details>
+<details><summary>How does &ldquo;Create invoice&rdquo; send my hours to the website?</summary><p>The hours travel inside the link, after the # sign. Browsers never send that part to the server, so the invoice is built on your computer only.</p></details>
+<details><summary>Does the timer keep running if I close the browser?</summary><p>Yes. The timer stores its start time, so it shows the right time when you open the browser again. Stop it when you finish work, or fix the end time later in Entries.</p></details>
+<details><summary>Can I bill clients in different currencies?</summary><p>Yes. Each client has its own currency, and totals are shown per currency. An invoice is created for one client at a time.</p></details>
+<details><summary>Why can the invoice total differ by a few cents?</summary><p>Invoices show hours with two decimals (for example 1.67 h for 1 h 40 min), the way most clients expect. The popup counts exact seconds.</p></details>
+<details><summary>How do I cancel Pro?</summary><p>Use the &ldquo;Manage membership&rdquo; link in your Gumroad receipt. Pro keeps working until the end of the paid period.</p></details>
+<details><summary>What hourly rate should I charge?</summary><p>Try our <a href="/freelance-rate-calculator.html">freelance rate calculator</a> and the guide on <a href="/guides/billable-hours-utilization-rate.html">billable hours and utilization rate</a>.</p></details>
+<details><summary>I need help</summary><p>Email <a href="mailto:klachev.vitali@gmail.com">klachev.vitali@gmail.com</a> &mdash; we usually reply within a day.</p></details>
+<div class="ad"><!-- Paste AdSense code here once approved --></div></main>
+<footer>&copy; 2026 BillableCalc &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms &amp; Refunds</a> &middot; klachev.vitali@gmail.com</footer>
+<script>if(location.hash==='#welcome'){var w=document.getElementById('welcome');w.hidden=false;}</script></body></html>

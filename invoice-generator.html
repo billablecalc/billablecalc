@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Invoice Generator | BillableCalc</title><meta name="description" content="Create a clean invoice and save it as PDF. No sign-up, nothing stored on a server."><link rel="canonical" href="https://billablecalc.com/invoice-generator.html"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Free Invoice Generator | BillableCalc</title><meta name="description" content="Create a clean invoice and save it as PDF. Several line items, any currency. No sign-up, nothing stored on a server."><link rel="canonical" href="https://billablecalc.com/invoice-generator.html"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--ac:#0b6e4f;--bd:#ddd;--card:#f6f8f7}
 @media(prefers-color-scheme:dark){:root{--bg:#141716;--fg:#eee;--mut:#9aa;--ac:#3ecf9a;--bd:#333;--card:#1d2321}}
 *{box-sizing:border-box}body{margin:0;font:17px/1.6 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
@@ -21,16 +21,74 @@ main.wide,body.w header,body.w footer{max-width:980px}.hero{padding:40px 0 24px;
 details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--mut)}
 @media(max-width:600px){.links{columns:1}.hero h1{font-size:1.8em}}
 @media(max-width:600px){header nav a{margin-left:10px;font-size:.95em}}
-@media print{header,footer,.noprint,.ad{display:none}}</style></head><body><header><a href="/"><b>BillableCalc</b></a><nav><a href="/#tools">Tools</a><a href="/#guides">Guides</a><a href="/templates.html">Templates</a><a href="/#apps">Apps</a></nav></header>
-<main><h1>Free Invoice Generator</h1><p class="noprint">Fill in the fields, then press Print / Save as PDF. Everything stays in your browser.</p>
-<div class="card"><div class="noprint"><label>Your name / business</label><input id="from" value="Your Business">
-<label>Bill to</label><input id="to" value="Client Name">
-<label>Invoice number</label><input id="no" value="001">
-<label>Description</label><input id="d" value="Consulting services">
-<label>Hours</label><input id="q" type="number" value="10"><label>Rate</label><input id="r" type="number" value="50">
-<label>Tax (%)</label><input id="t" type="number" value="0"><button onclick="render()">Update</button> <button onclick="window.print()">Print / Save as PDF</button></div>
-<div id="inv"></div></div><div class="ad"><!-- Paste AdSense code here once approved --></div></main>
+@media print{header,footer,.noprint,.ad{display:none}}</style>
+<style>.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 14px}
+select{width:100%;padding:9px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+.items{width:100%;border-collapse:collapse;margin-top:6px}.items th{text-align:left;font-size:.85em;color:var(--mut);font-weight:600;padding:4px 6px 4px 0}
+.items td{padding:4px 6px 4px 0;vertical-align:top}.items td.n{width:96px}.items td.amt{width:110px;text-align:right;padding-top:12px;font-variant-numeric:tabular-nums}
+.items td.x{width:34px}.items .x button{margin:4px 0 0;padding:6px 10px;background:transparent;color:var(--mut);border:1px solid var(--bd)}
+.btn2{background:transparent;color:var(--ac);border:2px solid var(--ac)}.imported{background:#e7f3ee;color:#0b4f39;border-radius:8px;padding:10px 14px;margin:12px 0}
+@media(prefers-color-scheme:dark){.imported{background:#17302a;color:#a6e7cf}}
+#inv{background:#fff;color:#1a1a1a;border-radius:8px;padding:28px;margin-top:18px;border:1px solid var(--bd)}
+#inv h2{margin:0 0 4px;font-size:1.6em}#inv .head{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+#inv table{width:100%;border-collapse:collapse;font-size:.95em}#inv th{text-align:left;border-bottom:2px solid #1a1a1a;padding:6px 4px}
+#inv td{border-bottom:1px solid #e3e3e3;padding:6px 4px}#inv .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#inv .tot td{border:0;padding:3px 4px}#inv .grand td{font-size:1.2em;font-weight:800;border-top:2px solid #1a1a1a;padding-top:8px}
+#inv .notes{margin-top:18px;color:#444;white-space:pre-wrap}
+.timer-promo{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.timer-promo img{width:56px;height:56px;flex:none}.timer-promo div{flex:1 1 300px}.timer-promo p{margin:4px 0 0;color:var(--mut)}
+@media(max-width:600px){.f2,.f3{grid-template-columns:1fr}.items td.n{width:70px}.items td.amt{width:80px}}
+@media print{body{background:#fff}main{max-width:none;padding:0}.card{border:0;padding:0;margin:0;background:#fff}#inv{border:0;padding:0;margin:0}}</style></head><body><header><a href="/"><b>BillableCalc</b></a><nav><a href="/#tools">Tools</a><a href="/#guides">Guides</a><a href="/templates.html">Templates</a><a href="/#apps">Apps</a></nav></header>
+<main><h1 class="noprint">Free Invoice Generator</h1><p class="noprint">Fill in the fields, then press Print / Save as PDF. Everything stays in your browser.</p>
+<div id="imported" class="imported noprint" hidden></div>
+<div class="card"><div class="noprint">
+<div class="f2"><div><label for="from">Your name / business</label><input id="from" value="Your Business"></div><div><label for="to">Bill to</label><input id="to" value="Client Name"></div></div>
+<div class="f3"><div><label for="no">Invoice number</label><input id="no" value="001"></div><div><label for="due">Due in (days)</label><input id="due" type="number" min="0" value="14"></div><div><label for="cur">Currency</label><select id="cur"></select></div></div>
+<label>Line items</label>
+<table class="items"><thead><tr><th>Description</th><th>Hours / qty</th><th>Rate</th><th class="noprint" style="text-align:right">Amount</th><th></th></tr></thead><tbody id="rows"></tbody></table>
+<button type="button" class="btn2" id="addRow">+ Add line</button>
+<div class="f2"><div><label for="t">Tax (%)</label><input id="t" type="number" value="0" min="0" step="0.01"></div><div><label for="notes">Payment details / notes</label><textarea id="notes" rows="2" placeholder="IBAN, PayPal, payment terms..."></textarea></div></div>
+<button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+<div id="inv"></div></div>
+<div class="card noprint timer-promo"><img src="/img/timer-icon.png" alt="" width="56" height="56"><div><b>Track your hours, then invoice in one click</b><p>BillableCalc Timer is a free Chrome extension: start a timer per client, see what you earned today and send your hours straight to this invoice.</p></div><a class="btn" href="/billable-hours-timer.html" style="margin:0">Get the timer</a></div>
+<div class="ad"><!-- Paste AdSense code here once approved --></div></main>
 <footer>&copy; 2026 BillableCalc &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms &amp; Refunds</a> &middot; klachev.vitali@gmail.com</footer>
-<script>function v(i){return document.getElementById(i).value}
-function render(){var s=v('q')*v('r'),t=s*v('t')/100;document.getElementById('inv').innerHTML='<h2>INVOICE #'+v('no').replace(/</g,'')+'</h2><p><b>From:</b> '+esc(v('from'))+'<br><b>To:</b> '+esc(v('to'))+'<br><b>Date:</b> '+new Date().toLocaleDateString()+'</p><hr><p>'+esc(v('d'))+': '+v('q')+' x '+v('r')+' = '+s.toFixed(2)+'</p><p>Tax: '+t.toFixed(2)+'</p><div class="out">Total: '+(s+t).toFixed(2)+'</div>'}
-function esc(x){return x.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}render()</script></body></html>
+<script>
+var CURS=['USD','EUR','GBP','CAD','AUD','BGN','PLN','CHF','SEK','INR'];
+function $(i){return document.getElementById(i)}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function num(x){var n=parseFloat(x);return isFinite(n)?n:0}
+function money(v){try{return new Intl.NumberFormat(undefined,{style:'currency',currency:$('cur').value}).format(v)}catch(e){return v.toFixed(2)+' '+$('cur').value}}
+function addRow(d,q,r){var tr=document.createElement('tr');
+tr.innerHTML='<td><input class="d" aria-label="Description"></td><td class="n"><input class="q" type="number" step="0.01" aria-label="Hours or quantity"></td><td class="n"><input class="r" type="number" step="0.01" aria-label="Rate"></td><td class="amt"></td><td class="x"><button type="button" title="Remove line" aria-label="Remove line">&times;</button></td>';
+tr.querySelector('.d').value=d==null?'':d;tr.querySelector('.q').value=q==null?'':q;tr.querySelector('.r').value=r==null?'':r;
+tr.querySelector('.x button').onclick=function(){tr.remove();if(!$('rows').children.length)addRow('',1,0);render()};
+$('rows').appendChild(tr)}
+function lines(){return[].map.call($('rows').children,function(tr){return{d:tr.querySelector('.d').value,q:num(tr.querySelector('.q').value),r:num(tr.querySelector('.r').value),tr:tr}})}
+function render(){var ls=lines(),sub=0,body='';
+ls.forEach(function(l){var a=l.q*l.r;sub+=a;l.tr.querySelector('.amt').textContent=money(a);
+body+='<tr><td>'+esc(l.d||'')+'</td><td class="r">'+l.q+'</td><td class="r">'+money(l.r)+'</td><td class="r">'+money(a)+'</td></tr>'});
+var tax=sub*num($('t').value)/100,now=new Date(),due=new Date(now.getTime()+num($('due').value)*864e5);
+$('inv').innerHTML='<div class="head"><div><h2>INVOICE #'+esc($('no').value)+'</h2><b>From:</b> '+esc($('from').value)+'<br><b>Bill to:</b> '+esc($('to').value)+'</div><div><b>Date:</b> '+now.toLocaleDateString()+'<br><b>Due:</b> '+due.toLocaleDateString()+'</div></div>'+
+'<table><thead><tr><th>Description</th><th class="r">Hours / qty</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead><tbody>'+body+'</tbody></table>'+
+'<table style="margin-top:10px"><tr class="tot"><td></td><td class="r">Subtotal</td><td class="r" style="width:140px">'+money(sub)+'</td></tr>'+
+(num($('t').value)?'<tr class="tot"><td></td><td class="r">Tax '+num($('t').value)+'%</td><td class="r">'+money(tax)+'</td></tr>':'')+
+'<tr class="grand"><td></td><td class="r">Total</td><td class="r">'+money(sub+tax)+'</td></tr></table>'+
+($('notes').value.trim()?'<div class="notes">'+esc($('notes').value.trim())+'</div>':'')}
+// Data from BillableCalc Timer arrives after "#", so it is never sent to the server.
+function fromHash(){var m=location.hash.match(/data=([A-Za-z0-9_-]+)/);if(!m)return null;
+try{var b=atob(m[1].replace(/-/g,'+').replace(/_/g,'/')),bytes=new Uint8Array(b.length);for(var i=0;i<b.length;i++)bytes[i]=b.charCodeAt(i);
+var o=JSON.parse(new TextDecoder().decode(bytes));return o&&Array.isArray(o.items)?o:null}catch(e){return null}}
+CURS.forEach(function(c){$('cur').add(new Option(c,c))});
+var data=fromHash();
+if(data){if(data.from)$('from').value=data.from;if(data.to)$('to').value=data.to;if(data.no)$('no').value=data.no;
+if(data.cur){if(CURS.indexOf(data.cur)<0)$('cur').add(new Option(data.cur,data.cur));$('cur').value=data.cur}
+$('t').value=num(data.tax);data.items.slice(0,200).forEach(function(l){addRow(String(l.d||'').slice(0,200),num(l.q),num(l.r))});
+var hrs=data.items.reduce(function(s,l){return s+num(l.q)},0);
+$('imported').hidden=false;$('imported').textContent='Imported '+data.items.length+' line'+(data.items.length===1?'':'s')+' ('+(Math.round(hrs*100)/100)+' h) from BillableCalc Timer. Check the details, then save as PDF.';
+if(!data.from)$('from').value='';}
+else{$('cur').value='USD';addRow('Consulting services',10,50)}
+if(!$('rows').children.length)addRow('',1,0);
+document.addEventListener('input',function(e){if(e.target.closest('.card'))render()});document.addEventListener('change',function(e){if(e.target.closest('.card'))render()});
+$('addRow').onclick=function(){addRow('',1,lines().length?lines()[lines().length-1].r:0);render();var ds=document.querySelectorAll('#rows .d');ds[ds.length-1].focus()};
+render();
+</script></body></html>
