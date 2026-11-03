@@ -28,15 +28,22 @@ details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;
 <h2>What we collect</h2>
 <p>Nothing. The extension runs entirely inside your browser. It does not send your time entries, clients, rates or browsing history to us or to any third party. We have no servers that receive data from the extension.</p>
 <h2>What is stored on your device</h2>
-<p>Your clients (name, hourly rate, currency), your time entries (start, end, note), the running timer, your settings (business name for invoices, rounding, next invoice number) and your Pro license key if you bought one. This data is kept in the browser&rsquo;s local extension storage on your computer. Removing the extension deletes it.</p>
+<p>Your clients (name, hourly rate, currency), your time entries (start, end, note), the running timer, the sites you add to a client, your settings (business name for invoices, rounding, next invoice number, reminder options) and your Pro license key if you bought one. This data is kept in the browser&rsquo;s local extension storage on your computer. Removing the extension deletes it.</p>
 <h2>Creating an invoice</h2>
 <p>When you press &ldquo;Create invoice&rdquo;, the extension opens billablecalc.com/invoice-generator.html in a new tab. The invoice lines (client name, your business name, dates, notes, hours and rate) are placed in the part of the link after the # sign. Browsers do not send that part to the website&rsquo;s server; the page reads it on your computer to fill in the invoice.</p>
+<h2>Reminders and client sites</h2>
+<p>If you add sites to a client (for example figma.com), the browser asks you to allow access to exactly those sites. The extension then only notices when you open one of them with the timer off, to offer starting the timer. It never reads the content of any page, never sees sites you did not list, and keeps no browsing history. Idle detection reads only whether your computer is active, idle or locked while the timer runs.</p>
+<h2>Backup</h2>
+<p>&ldquo;Download backup&rdquo; saves your clients, entries and settings as a file on your computer. Nothing is uploaded anywhere.</p>
 <h2>License check</h2>
 <p>If you activate Pro, the extension sends your license key to Gumroad (api.gumroad.com) to confirm the membership, and re-checks it every few days. Gumroad&rsquo;s <a href="https://gumroad.com/privacy" rel="nofollow">privacy policy</a> applies to that request. Payments are handled by Gumroad; we never see your card details.</p>
 <h2>Permissions</h2>
 <ul>
 <li><b>storage</b> &mdash; to keep your clients, entries and settings on your device.</li>
 <li><b>alarms</b> &mdash; to update the elapsed time on the toolbar icon once a minute while the timer runs.</li>
+<li><b>notifications</b> &mdash; to show the reminders: start the timer on a client&rsquo;s site, keep or remove the time you were away, still working after several hours.</li>
+<li><b>idle</b> &mdash; to notice that you stepped away while the timer runs.</li>
+<li><b>Access to the sites you add to a client</b> (optional) &mdash; requested only for those sites, only to offer starting the timer.</li>
 <li><b>api.gumroad.com</b> &mdash; only for the license check.</li>
 </ul>
 <h2>Selling or sharing data</h2>
