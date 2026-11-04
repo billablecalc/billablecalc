@@ -1,0 +1,44 @@
+# Tells Bing, Yandex and other IndexNow search engines about new or changed pages after every push.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Send changed pages to IndexNow
+        env:
+          HOST: billablecalc.com
+          KEY: 68065abc3edfbe52a07b0e657c61b035
+        run: |
+          set -eu
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse HEAD~1 >/dev/null 2>&1; then
+            FILES=$(git ls-files '*.html')
+          else
+            FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '*.html' 'sitemap.xml')
+          fi
+          URLS=""
+          for f in $FILES; do
+            case "$f" in
+              404.html|sitemap.xml) continue ;;
+              index.html) u="https://$HOST/" ;;
+              *) u="https://$HOST/$f" ;;
+            esac
+            URLS="$URLS $u"
+          done
+          if [ -z "$URLS" ]; then echo "No changed pages."; exit 0; fi
+          echo "Pages:"; for u in $URLS; do echo "  $u"; done
+          JSON=$(python3 -c 'import json,os,sys; print(json.dumps({"host":os.environ["HOST"],"key":os.environ["KEY"],"keyLocation":"https://"+os.environ["HOST"]+"/"+os.environ["KEY"]+".txt","urlList":sys.argv[1:]}))' $URLS)
+          # Give GitHub Pages a minute to publish the new version first.
+          sleep 60
+          CODE=$(curl -s -o /tmp/resp -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$JSON")
+          echo "IndexNow answered: $CODE"; cat /tmp/resp || true
+          case "$CODE" in 200|202) ;; *) exit 1 ;; esac
