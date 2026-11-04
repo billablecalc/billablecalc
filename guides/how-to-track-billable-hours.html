@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Track Billable Hours Without Forgetting the Timer | BillableCalc</title><meta name="description" content="How freelancers lose billable hours to forgotten timers and idle time, and a simple system to track every hour: client reminders, idle checks, weekly review and invoicing."><link rel="canonical" href="https://billablecalc.com/guides/how-to-track-billable-hours.html"><link rel="alternate" type="application/rss+xml" title="BillableCalc Guides" href="/rss.xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--ac:#0b6e4f;--bd:#ddd;--card:#f6f8f7}
+@media(prefers-color-scheme:dark){:root{--bg:#141716;--fg:#eee;--mut:#9aa;--ac:#3ecf9a;--bd:#333;--card:#1d2321}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+header,main,footer{max-width:760px;margin:auto;padding:16px}header{display:flex;justify-content:space-between;border-bottom:1px solid var(--bd)}
+a{color:var(--ac)}h1{line-height:1.2}.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:16px 0}
+label{display:block;margin:10px 0 4px;font-weight:600}input,textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+button,.btn{background:var(--ac);color:#fff;border:0;padding:10px 18px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none;display:inline-block;margin-top:12px}
+.out{font-size:1.3em;font-weight:700;margin-top:12px}.ad{min-height:90px;margin:16px 0}footer{color:var(--mut);font-size:.9em}
+header{align-items:center}header nav a{margin-left:16px;text-decoration:none;font-weight:600}header nav a:hover{text-decoration:underline}
+main.wide,body.w header,body.w footer{max-width:980px}.hero{padding:40px 0 24px;text-align:center}.hero h1{font-size:2.3em;margin:0 0 12px}.hero p{font-size:1.15em;color:var(--mut);max-width:620px;margin:0 auto 20px}
+.hero .btn{margin:6px}.btn.alt{background:transparent;color:var(--ac);border:2px solid var(--ac)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;color:var(--mut);font-size:.95em;margin:18px 0 0;padding:0;list-style:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:14px 0}.grid .card{margin:0}
+.grid .card h3{margin:0 0 6px;font-size:1.05em}.grid .card h3 a{text-decoration:none}.grid .card p{margin:0;color:var(--mut);font-size:.95em}
+.grid .card:hover{border-color:var(--ac)}.sec{margin:44px 0 8px}.sec h2{margin:0 0 4px}.sec>p{margin:0;color:var(--mut)}
+.promo{background:var(--card);border:2px solid var(--ac);border-radius:14px;padding:26px;margin:44px 0;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+.promo>div{flex:1 1 320px}.promo h2{margin:0 0 8px}.promo ul{padding-left:20px;margin:10px 0}.price{font-size:2em;font-weight:800}
+.links{columns:2;column-gap:28px;padding-left:18px}.links li{margin:6px 0;break-inside:avoid}
+details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--mut)}
+@media(max-width:600px){.links{columns:1}.hero h1{font-size:1.8em}}
+@media(max-width:600px){header nav a{margin-left:10px;font-size:.95em}}
+@media print{header,footer,.noprint,.ad{display:none}}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best way to track billable hours as a freelancer?", "acceptedAnswer": {"@type": "Answer", "text": "Use a timer you can start in one click, give every client an hourly rate, and turn on reminders so you never forget to start or stop it. Review your hours at the end of each week and invoice from them directly."}}, {"@type": "Question", "name": "How do I avoid forgetting to start my time tracker?", "acceptedAnswer": {"@type": "Answer", "text": "Tie the timer to the tools you use for each client. BillableCalc Timer reminds you to start when you open a client's Figma, Jira or website with the timer off."}}, {"@type": "Question", "name": "Should I bill for time I was away from the computer?", "acceptedAnswer": {"@type": "Answer", "text": "Only if you were still working, for example on a call or sketching on paper. Otherwise remove it. A tracker with idle detection asks you when you come back, so you decide instead of guessing later."}}]}</script></head><body><header><a href="/"><b>BillableCalc</b></a><nav><a href="/#tools">Tools</a><a href="/#guides">Guides</a><a href="/templates.html">Templates</a><a href="/#apps">Apps</a></nav></header>
+<main><h1>How to Track Billable Hours Without Forgetting the Timer</h1>
+<p><b>Short answer:</b> use a one-click timer with an hourly rate per client, turn on reminders so the timer starts when you open a client&rsquo;s tools and asks about time you were away, then review your hours every Friday and invoice straight from them. Most lost hours come from two mistakes: a timer you forgot to start, and a timer you forgot to stop.</p>
+
+<h2>Where freelancers lose billable hours</h2>
+<ul>
+<li><b>The forgotten start.</b> You open the client&rsquo;s Figma file &ldquo;just to check one thing&rdquo; and look up 90 minutes later. That time is real work, but there is no record of it.</li>
+<li><b>The forgotten stop.</b> The timer runs through lunch or overnight. Now you have to guess what to cut, and guessing usually means billing less.</li>
+<li><b>Switching clients.</b> You jump from one client&rsquo;s email to another&rsquo;s Slack, and the timer keeps running for the wrong one.</li>
+<li><b>Small tasks.</b> Five-minute replies, calls and quick fixes add up to hours a week and rarely get tracked.</li>
+<li><b>Rebuilding later.</b> Filling in timesheets from memory on Friday is slow and you will always undercount.</li>
+</ul>
+<p>Losing just 30 minutes a day at &euro;50/hour is about &euro;500 a month.</p>
+
+<h2>A simple system that catches every hour</h2>
+
+<h3>1. One client, one rate</h3>
+<p>Set up each client once with their hourly rate and currency. When the amount grows in real time while you work, it is much harder to forget the timer.</p>
+
+<h3>2. Start the timer where the work starts</h3>
+<p>The most reliable trigger is the client&rsquo;s own tools. In <a href="/billable-hours-timer.html">BillableCalc Timer</a> you add each client&rsquo;s sites (for example <i>figma.com</i> or <i>acme.atlassian.net</i>). When you open one with the timer off, you get a reminder: &ldquo;Working for Acme? Start timer.&rdquo;</p>
+<img class="shot" src="/img/timer-reminder.jpg" alt="Reminder: you opened figma.com, working for Northwind Studio? Start timer" width="1280" height="800" loading="lazy">
+
+<h3>3. Let the tracker ask about idle time</h3>
+<p>If you step away while the timer runs, a good tracker asks when you come back: keep that time or remove it? You decide in a second, while you still remember, instead of guessing at the end of the week.</p>
+<img class="shot" src="/img/timer-idle.jpg" alt="You were away 45 minutes while the timer ran: remove or keep" width="1280" height="800" loading="lazy">
+
+<h3>4. Catch the forgotten stop</h3>
+<p>Turn on a &ldquo;still working?&rdquo; check after a few hours. It costs nothing on long focus days and saves you from a timer that ran all night.</p>
+
+<h3>5. Write one line per entry</h3>
+<p>&ldquo;Homepage redesign&rdquo; or &ldquo;Client feedback call&rdquo; is enough. These notes become the lines on your invoice and answer the client&rsquo;s &ldquo;what was this?&rdquo; before they ask.</p>
+
+<h3>6. Review every Friday, invoice from the hours</h3>
+<p>Spend ten minutes on Friday: fix entries, add anything you missed, then create the invoice directly from the week&rsquo;s hours. See <a href="/guides/how-to-write-an-invoice.html">how to write an invoice</a> for what to include.</p>
+
+<h2>Manual timesheet vs. timer with reminders</h2>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:.95em">
+<thead><tr><th style="text-align:left;border-bottom:2px solid var(--bd);padding:8px"></th><th style="text-align:left;border-bottom:2px solid var(--bd);padding:8px">Timesheet from memory</th><th style="text-align:left;border-bottom:2px solid var(--bd);padding:8px">Timer with reminders</th></tr></thead>
+<tbody>
+<tr><td style="padding:8px;border-bottom:1px solid var(--bd)"><b>Forgotten work</b></td><td style="padding:8px;border-bottom:1px solid var(--bd)">Lost</td><td style="padding:8px;border-bottom:1px solid var(--bd)">Reminder when you open the client&rsquo;s tools</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--bd)"><b>Breaks</b></td><td style="padding:8px;border-bottom:1px solid var(--bd)">Guessed</td><td style="padding:8px;border-bottom:1px solid var(--bd)">Asked about when you return</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--bd)"><b>Weekly effort</b></td><td style="padding:8px;border-bottom:1px solid var(--bd)">30&ndash;60 minutes of reconstructing</td><td style="padding:8px;border-bottom:1px solid var(--bd)">10 minutes of review</td></tr>
+<tr><td style="padding:8px"><b>Invoice</b></td><td style="padding:8px">Typed by hand</td><td style="padding:8px">Created from the hours in one click</td></tr>
+</tbody></table></div>
+
+<h2>FAQ</h2>
+<details><summary>What is the best way to track billable hours as a freelancer?</summary><p>A one-click timer with a rate per client, reminders to start and stop, a weekly review and invoicing straight from your hours. Pick a tool simple enough that you actually use it every day.</p></details>
+<details><summary>How do I avoid forgetting to start my time tracker?</summary><p>Tie it to the tools you use for each client. <a href="/billable-hours-timer.html">BillableCalc Timer</a> reminds you to start when you open a client&rsquo;s site with the timer off, and shows an orange &ldquo;!&rdquo; on its icon if you miss the notification.</p></details>
+<details><summary>Should I bill for time I was away from the computer?</summary><p>Only if you were still working, for example on a call or sketching on paper. Otherwise remove it. Idle detection asks you right when you come back, so you decide while you still remember.</p></details>
+<details><summary>How many hours can a freelancer actually bill?</summary><p>Usually 50&ndash;70% of working time. See <a href="/guides/billable-hours-utilization-rate.html">billable hours and utilization rate</a>.</p></details>
+
+<h2>Try it</h2><ul><li><a href="/billable-hours-timer.html">BillableCalc Timer (free Chrome extension)</a></li><li><a href="/invoice-generator.html">Free invoice generator</a></li></ul>
+<h2>More guides</h2><ul><li><a href="/guides/billable-hours-utilization-rate.html">Billable Hours and Utilization Rate: How Many Hours Can You Really Bill?</a></li><li><a href="/guides/how-to-write-an-invoice.html">How to Write an Invoice</a></li><li><a href="/guides/how-much-should-a-freelancer-charge-per-hour.html">How Much Should a Freelancer Charge Per Hour?</a></li></ul>
+<div class="ad"><!-- Paste AdSense code here once approved --></div></main>
+<footer>&copy; 2026 BillableCalc &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms &amp; Refunds</a> &middot; klachev.vitali@gmail.com</footer>
+<script></script></body></html>
