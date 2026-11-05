@@ -33,7 +33,7 @@ details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;
 <h1>Never forget to start the timer again</h1>
 <p>BillableCalc Timer is a free Chrome extension for freelancers. It reminds you to start when you open a client&rsquo;s Figma, Jira or website, asks what to do with the time you were away, and turns your hours into an invoice in one click.</p>
 <a class="btn" href="https://chromewebstore.google.com/detail/kcolochdcbfpdidechedpkdlobjmdned?utm_source=billablecalc&utm_medium=landing&utm_campaign=site" rel="nofollow">Add to Chrome &mdash; it&rsquo;s free</a><a class="btn alt" href="#pricing">See Pro</a>
-<ul class="trust"><li>No account, no sign-up</li><li>Your data stays in your browser</li><li>Works offline</li></ul>
+<ul class="trust"><li>Sees only the client sites you list</li><li>No account, data stays in your browser</li><li>Reminders work even when notifications are off</li></ul>
 </section>
 
 <img class="shot" src="/img/timer-reminder.jpg" alt="BillableCalc Timer reminder: You opened figma.com, working for Northwind Studio? Start timer" width="1280" height="800">
@@ -41,14 +41,14 @@ details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;
 <div style="position:relative;padding-top:56.25%;margin:16px 0;border-radius:12px;overflow:hidden"><iframe src="https://www.youtube-nocookie.com/embed/bIKpkwn_egU" title="BillableCalc Timer: never forget to start the timer" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <div class="feat">
-<div class="card"><h3>Reminds you on client sites</h3><p>Add a client&rsquo;s sites, like figma.com or acme.atlassian.net. Open one with the timer off and you get a reminder: &ldquo;Working for Acme? Start timer.&rdquo;</p></div>
-<div class="card"><h3>Catches idle time</h3><p>Stepped away while the timer ran? When you&rsquo;re back, keep that time or remove it in one click. No guessing, no billing coffee breaks.</p></div>
+<div class="card"><h3>Reminds you on client sites</h3><p>Add a client&rsquo;s sites, like figma.com or acme.atlassian.net. Open one with the timer off and you get a reminder: &ldquo;Working for Acme? Start timer.&rdquo; Timer running for another client? It offers to switch, so hours never land on the wrong client.</p></div>
+<div class="card"><h3>Sees only the sites you list</h3><p>The extension asks access to exactly the client sites you add, nothing else. It never reads page content, keeps no browsing history and has no servers. Hours stay in your browser, with a backup file whenever you want one.</p></div>
+<div class="card"><h3>Catches idle and forgotten time</h3><p>Stepped away while the timer ran? When you&rsquo;re back, keep that time or remove it in one click. Running for hours? It asks if you&rsquo;re still working. Every question also shows in the popup with an orange badge, so nothing gets lost when macOS hides notifications.</p></div>
 <div class="card"><h3>One-click timer</h3><p>Pick a client, type what you&rsquo;re working on, press Start. The timer keeps running when the window closes.</p></div>
 <div class="card"><h3>See what you earn</h3><p>Each client has an hourly rate and currency. The amount grows while you work.</p></div>
 <div class="card"><h3>Badge and shortcut</h3><p>Elapsed time on the toolbar icon. <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> starts or stops it from any tab.</p></div>
 <div class="card"><h3>Entries you can fix</h3><p>Forgot to start the timer? Add time by hand or edit start and end of any entry.</p></div>
 <div class="card"><h3>Invoice in one click</h3><p>Choose a client and a period. Our <a href="/invoice-generator.html">free invoice generator</a> opens with your hours filled in.</p></div>
-<div class="card"><h3>Private by design</h3><p>No servers, no tracking. Hours and clients are stored in your browser only, with a backup file whenever you want one.</p></div>
 </div>
 
 <img class="shot" src="/img/timer-idle.jpg" alt="BillableCalc Timer asks: you were away 45 minutes while the timer ran, remove or keep?" width="1280" height="800" loading="lazy">
@@ -75,7 +75,7 @@ details{border-bottom:1px solid var(--bd);padding:12px 0}summary{cursor:pointer;
 <div class="sec"><h2>Questions</h2></div>
 <details><summary>Do I need an account?</summary><p>No. Install the extension and start tracking. There is nothing to sign up for.</p></details>
 <details><summary>Where are my hours stored?</summary><p>In your browser&rsquo;s local extension storage on your computer. We have no servers that receive them. In Settings you can download a backup file at any time and restore it on another computer. See the <a href="/privacy-timer.html">privacy policy</a>.</p></details>
-<details><summary>Can the timer see the sites I visit?</summary><p>Only the sites you add to a client. The browser asks you to allow access to exactly those sites, and the extension only notices when you open one of them with the timer off. It never reads page content and keeps no browsing history.</p></details>
+<details><summary>Can the timer see the sites I visit?</summary><p>Only the sites you add to a client. The browser asks you to allow access to exactly those sites, and the extension only notices when you open one of them, to offer starting the timer or switching to that client. It never reads page content and keeps no browsing history.</p></details>
 <details><summary>What happens when I step away?</summary><p>If your computer is idle for 15 minutes (you can change this or switch it off) while the timer runs, the extension asks when you&rsquo;re back whether to keep that time or remove it.</p></details>
 <details><summary>How does &ldquo;Create invoice&rdquo; send my hours to the website?</summary><p>The hours travel inside the link, after the # sign. Browsers never send that part to the server, so the invoice is built on your computer only.</p></details>
 <details><summary>Does the timer keep running if I close the browser?</summary><p>Yes. The timer stores its start time, so it shows the right time when you open the browser again. Stop it when you finish work, or fix the end time later in Entries.</p></details>
