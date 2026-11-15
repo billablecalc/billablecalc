@@ -1,0 +1,68 @@
+# BillableCalc
+
+> BillableCalc (billablecalc.com) makes small, privacy-friendly tools: free calculators and guides for freelancers, and two browser extensions. Activity Cleaner bulk deletes your own LinkedIn posts, comments and likes. BillableCalc Timer tracks billable hours. No sign-up, and the extensions collect no data.
+
+Made by Vitali Klachev (Burgas, Bulgaria). Contact: support@billablecalc.com
+
+## Activity Cleaner for LinkedIn
+
+A browser extension for Chrome, Firefox and Edge that bulk deletes your own LinkedIn activity: posts, reposts, comments and reactions (likes). LinkedIn has no "delete all" button. Activity Cleaner opens your activity pages and clicks delete for you, one item at a time, at a slow, human-like pace.
+
+- Runs entirely in your browser. It never asks for your LinkedIn password and sends your LinkedIn data nowhere.
+- A dry run counts everything first and deletes nothing.
+- Free: up to 10 deletions a day. Pro: unlimited for $39/year, or a $9 pass for 7 days.
+- Good for: cleaning up a profile before a job search, removing old opinions or likes, starting fresh after a career change.
+
+- [Activity Cleaner home page](https://billablecalc.com/activity-cleaner.html): features, pricing, screenshots, FAQ
+- [Chrome Web Store](https://chromewebstore.google.com/detail/cggmnmnchnbackhfknagljdeboidbgak)
+- [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/activity-cleaner-linkedin/)
+- [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/nnnlmaphpmillhkdhejoifahggaakpnd)
+- [Privacy policy](https://billablecalc.com/privacy-cleaner.html)
+
+## LinkedIn guides
+
+- [How to delete all LinkedIn posts, comments and likes at once](https://billablecalc.com/guides/how-to-delete-all-linkedin-posts.html)
+- [How to delete all your comments on LinkedIn](https://billablecalc.com/guides/how-to-delete-all-comments-on-linkedin.html)
+- [How to remove all your likes on LinkedIn](https://billablecalc.com/guides/how-to-remove-all-likes-on-linkedin.html)
+- [If I delete a LinkedIn post, comment or repost, will they know?](https://billablecalc.com/guides/does-linkedin-notify-when-you-delete-a-post.html)
+- [How to clean up your LinkedIn profile before a job search](https://billablecalc.com/guides/how-to-clean-up-linkedin-before-job-search.html): a 10-step checklist
+- [Redact vs Unpost vs Activity Cleaner](https://billablecalc.com/guides/redact-vs-unpost-vs-activity-cleaner.html): an honest comparison of tools that bulk delete LinkedIn activity
+- [How to delete all your Facebook comments and likes](https://billablecalc.com/guides/how-to-delete-all-facebook-comments-and-likes.html)
+
+## BillableCalc Timer
+
+A Chrome extension for freelancers that reminds you to start the timer when you open a client's site, catches idle time, shows what you earn and turns hours into an invoice. No account. Free plan; Pro is $4/month or $29/year.
+
+- [BillableCalc Timer home page](https://billablecalc.com/billable-hours-timer.html)
+- [Chrome Web Store](https://chromewebstore.google.com/detail/kcolochdcbfpdidechedpkdlobjmdned)
+- [How to track billable hours without forgetting the timer](https://billablecalc.com/guides/how-to-track-billable-hours.html)
+
+## Free calculators for freelancers
+
+- [Freelance hourly rate calculator](https://billablecalc.com/freelance-rate-calculator.html)
+- [Freelance day rate calculator](https://billablecalc.com/day-rate-calculator.html)
+- [Project price calculator](https://billablecalc.com/project-price-calculator.html)
+- [Monthly retainer calculator](https://billablecalc.com/retainer-calculator.html)
+- [Free invoice generator](https://billablecalc.com/invoice-generator.html): PDF, no sign-up
+- [Late fee calculator for unpaid invoices](https://billablecalc.com/late-fee-calculator.html), with pages for 14 US states, e.g. [California](https://billablecalc.com/late-fee-calculator-california.html), [Texas](https://billablecalc.com/late-fee-calculator-texas.html), [New York](https://billablecalc.com/late-fee-calculator-new-york.html), [Florida](https://billablecalc.com/late-fee-calculator-florida.html)
+- [Quarterly tax estimator](https://billablecalc.com/quarterly-tax-estimator.html) and [self-employment tax estimator (US)](https://billablecalc.com/self-employment-tax-calculator.html)
+- [Hourly to salary](https://billablecalc.com/hourly-to-salary.html) and [salary to hourly](https://billablecalc.com/salary-to-hourly.html)
+- [Profit margin and markup](https://billablecalc.com/profit-margin-calculator.html), [break-even](https://billablecalc.com/break-even-calculator.html), [sales tax](https://billablecalc.com/sales-tax-calculator.html), [overtime pay](https://billablecalc.com/overtime-pay-calculator.html)
+
+## Freelance guides
+
+- [How much should a freelancer charge per hour?](https://billablecalc.com/guides/how-much-should-a-freelancer-charge-per-hour.html)
+- [From salary to freelance rate](https://billablecalc.com/guides/salary-to-freelance-rate.html)
+- [How to price a freelance project](https://billablecalc.com/guides/how-to-price-a-freelance-project.html)
+- [Hourly vs fixed price vs retainer](https://billablecalc.com/guides/hourly-vs-fixed-price-vs-retainer.html)
+- [How to handle late-paying clients](https://billablecalc.com/guides/how-to-handle-late-paying-clients.html) and [late payment email templates](https://billablecalc.com/guides/late-payment-email-templates.html)
+- [Net 30 payment terms explained](https://billablecalc.com/guides/net-30-payment-terms-explained.html)
+- [How to write a freelance contract](https://billablecalc.com/guides/how-to-write-a-freelance-contract.html) and [sample contract clauses](https://billablecalc.com/guides/freelance-contract-template-clauses.html)
+- [How to write a scope of work](https://billablecalc.com/guides/how-to-write-a-scope-of-work.html) and [how to prevent scope creep](https://billablecalc.com/guides/how-to-prevent-scope-creep.html)
+
+## Optional
+
+- [Freelance contract and proposal template pack](https://billablecalc.com/templates.html): $12 one-time
+- [How much to save for freelance taxes](https://billablecalc.com/guides/how-much-to-save-for-freelance-taxes.html)
+- [Billable hours and utilization rate](https://billablecalc.com/guides/billable-hours-utilization-rate.html)
+- [Terms and refund policy](https://billablecalc.com/terms.html)
