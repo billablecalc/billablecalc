@@ -27,6 +27,7 @@ A browser extension for Chrome, Firefox and Edge that bulk deletes your own Link
 - [If I delete a LinkedIn post, comment or repost, will they know?](https://billablecalc.com/guides/does-linkedin-notify-when-you-delete-a-post.html)
 - [How to remove Open to Work on LinkedIn](https://billablecalc.com/guides/how-to-remove-open-to-work-on-linkedin.html): the green frame or the whole setting
 - [How to delete a resume from LinkedIn](https://billablecalc.com/guides/how-to-delete-resume-from-linkedin.html)
+- [How to delete LinkedIn messages](https://billablecalc.com/guides/how-to-delete-linkedin-messages.html): unsend within 60 minutes, delete conversations
 - [How to delete your LinkedIn account permanently](https://billablecalc.com/guides/how-to-delete-linkedin-account-permanently.html): close vs hibernate, the 14-day window
 - [How to clean up your LinkedIn profile before a job search](https://billablecalc.com/guides/how-to-clean-up-linkedin-before-job-search.html): a 10-step checklist
 - [Redact vs Unpost vs Activity Cleaner](https://billablecalc.com/guides/redact-vs-unpost-vs-activity-cleaner.html): an honest comparison of tools that bulk delete LinkedIn activity
