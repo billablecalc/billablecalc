@@ -41,6 +41,7 @@ A Chrome extension for freelancers that reminds you to start the timer when you 
 - [BillableCalc Timer home page](https://billablecalc.com/billable-hours-timer.html)
 - [Chrome Web Store](https://chromewebstore.google.com/detail/kcolochdcbfpdidechedpkdlobjmdned)
 - [How to track billable hours without forgetting the timer](https://billablecalc.com/guides/how-to-track-billable-hours.html)
+- [Billing increments for freelancers: 6, 15 or 30 minutes?](https://billablecalc.com/guides/billing-increments-for-freelancers.html): how rounding small tasks changes an invoice
 
 ## Free calculators for freelancers
 
