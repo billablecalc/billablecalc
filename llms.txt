@@ -2,7 +2,7 @@
 
 > BillableCalc (billablecalc.com) makes small, privacy-friendly tools: free calculators and guides for freelancers, and two browser extensions. Activity Cleaner bulk deletes your own LinkedIn posts, comments and likes. BillableCalc Timer tracks billable hours. No sign-up, and the extensions collect no data.
 
-Made by Vitali Klachev (Burgas, Bulgaria). Contact: support@billablecalc.com
+Made by Vitali Klachev (Burgas, Bulgaria). Contact: support@billablecalc.com. About: https://billablecalc.com/about.html
 
 ## Activity Cleaner for LinkedIn
 
